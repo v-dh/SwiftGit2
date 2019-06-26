@@ -147,9 +147,8 @@ public final class Repository {
 	/// checkoutProgress - A block that's called with the progress of the checkout.
 	///
 	/// Returns a `Result` with a `Repository` or an error.
-	public class func clone(from remoteURL: URL, to localURL: URL, localClone: Bool = false, bare: Bool = false,
-	                        credentials: Credentials = .default, checkoutStrategy: CheckoutStrategy = .Safe,
-	                        checkoutProgress: CheckoutProgressBlock? = nil) -> Result<Repository, NSError> {
+	public class func clone(from remoteURL: URL, to localURL: URL, localClone: Bool = false, bare: Bool = false, credentials: Credentials = .default, checkoutStrategy: CheckoutStrategy = .Safe, checkoutProgress: CheckoutProgressBlock? = nil) -> Result<Repository, NSError> {
+		
 		var options = cloneOptions(
 			bare: bare,
 			localClone: localClone,
